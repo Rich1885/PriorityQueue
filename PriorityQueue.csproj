@@ -60,6 +60,7 @@
     <Compile Include="QueueOverflowException.cs" />
     <Compile Include="QueueUnderflowException.cs" />
     <Compile Include="SortedArrayPriorityQueue.cs" />
+    <Compile Include="SortedLinkedPriorityQueue.cs" />
     <Compile Include="UnsortedArrayPriorityQueue.cs" />
     <EmbeddedResource Include="QueueManager.resx">
       <DependentUpon>QueueManager.cs</DependentUpon>
