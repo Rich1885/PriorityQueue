@@ -20,6 +20,7 @@ namespace PriorityQueue
             CB_Implementation.Items.Add("Sorted Array");
             CB_Implementation.Items.Add("Unsorted Array");
             CB_Implementation.Items.Add("Sorted Linked List");
+            CB_Implementation.Items.Add("Unsorted Linked List");
             CB_Implementation.SelectedIndex = 0; 
         }
 
@@ -40,6 +41,10 @@ namespace PriorityQueue
             {
                 InitSortedLinkedPriorityQueue();
             }
+            else if (CB_Implementation.SelectedIndex == 3)
+            {
+                InitUnsortedLinkedPriorityQueue();
+            }
         }
         
         private void InitSortedArrayQueue()
@@ -57,6 +62,11 @@ namespace PriorityQueue
         {
             queue = new SortedLinkedPriorityQueue< Person >();
             Lbl_Output.Text = "New sorted linked list priority queue created";
+        }
+        private void InitUnsortedLinkedPriorityQueue()
+        {
+            queue = new UnsortedLinkedPriorityQueue<Person>();
+            Lbl_Output.Text = "New Unsorted linked list priority queue created";
         }
 
         private void Btn_AddQueue_Click(object sender, System.EventArgs e)
