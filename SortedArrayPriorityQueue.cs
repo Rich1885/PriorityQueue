@@ -26,13 +26,12 @@ namespace PriorityQueue
 
         public void Add(T item, int priority)
         {
-            tailIndex++;
-            if (tailIndex >= capacity)
+            if (tailIndex + 1 >= capacity)
             {
-                tailIndex--;
                 throw new QueueOverflowException();
             }
 
+            tailIndex++;
             int i = tailIndex;
             while (i > 0 && storage[i - 1].Priority < priority)
             {
@@ -41,6 +40,7 @@ namespace PriorityQueue
             }
             storage[i] = new PriorityItem<T>(item, priority);
         }
+
 
         public void Remove()
         {

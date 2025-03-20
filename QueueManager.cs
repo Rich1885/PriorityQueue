@@ -14,7 +14,12 @@ namespace PriorityQueue
             // Hide control panels until an interface is selected
             Panel_Add.Visible = false;
             Panel_Actions.Visible = false;
-            Panel_Output.Visible = false;            
+            Panel_Output.Visible = false;
+
+            CB_Implementation.Items.Clear();
+            CB_Implementation.Items.Add("Sorted Array");
+            CB_Implementation.Items.Add("Unsorted Array");
+            CB_Implementation.SelectedIndex = 0; 
         }
 
         private void CB_Implementation_SelectedIndexChanged(object sender, System.EventArgs e)
@@ -26,6 +31,9 @@ namespace PriorityQueue
             if (CB_Implementation.SelectedIndex == 0)
             {
                 InitSortedArrayQueue();
+            } else if (CB_Implementation.SelectedIndex == 1)
+            {
+                InitUnsortedArrayQueue();
             }
         }
         
@@ -33,6 +41,12 @@ namespace PriorityQueue
         {
             queue = new SortedArrayPriorityQueue<Person>(8);
             Lbl_Output.Text = "New sorted array priority queue created";
+        }
+
+        private void InitUnsortedArrayQueue()
+        {
+            queue = new UnsortedArrayPriorityQueue<Person>(8);
+            Lbl_Output.Text = "New unsorted array priority queue created";
         }
 
         private void Btn_AddQueue_Click(object sender, System.EventArgs e)
