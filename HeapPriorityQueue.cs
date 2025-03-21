@@ -70,9 +70,11 @@ namespace PriorityQueue
             }
 
             heapSize--;
+
             storage[0] = storage[heapSize];
             storage[heapSize] = null; 
             heapSize--;
+
             HeapifyDown(0);
 
         }
