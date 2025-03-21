@@ -22,8 +22,11 @@ namespace PriorityQueue
             CB_Implementation.Items.Add("Sorted Linked List");
             CB_Implementation.Items.Add("Unsorted Linked List");
             CB_Implementation.Items.Add("HeapPriorityQueue");
+
             CB_Implementation.SelectedIndex = 0;
         }
+
+        // Event handler that triggers when the user selects a priority queue implementation
 
         private void CB_Implementation_SelectedIndexChanged(object sender, System.EventArgs e)
         {
@@ -53,6 +56,9 @@ namespace PriorityQueue
             }
         }
 
+
+
+        // Initialization methods for each priority queue implementation.
         private void InitSortedArrayQueue()
         {
             queue = new SortedArrayPriorityQueue<Person>(8);
