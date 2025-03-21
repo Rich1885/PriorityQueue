@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HeapPriorityQueue.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PriorityItem.cs" />
     <Compile Include="PriorityQueue.cs" />
