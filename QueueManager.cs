@@ -21,7 +21,8 @@ namespace PriorityQueue
             CB_Implementation.Items.Add("Unsorted Array");
             CB_Implementation.Items.Add("Sorted Linked List");
             CB_Implementation.Items.Add("Unsorted Linked List");
-            CB_Implementation.SelectedIndex = 0; 
+            CB_Implementation.Items.Add("HeapPriorityQueue");
+            CB_Implementation.SelectedIndex = 0;
         }
 
         private void CB_Implementation_SelectedIndexChanged(object sender, System.EventArgs e)
@@ -33,7 +34,8 @@ namespace PriorityQueue
             if (CB_Implementation.SelectedIndex == 0)
             {
                 InitSortedArrayQueue();
-            } else if (CB_Implementation.SelectedIndex == 1)
+            }
+            else if (CB_Implementation.SelectedIndex == 1)
             {
                 InitUnsortedArrayQueue();
             }
@@ -45,8 +47,12 @@ namespace PriorityQueue
             {
                 InitUnsortedLinkedPriorityQueue();
             }
+            else if (CB_Implementation.SelectedIndex == 3)
+            {
+                InitHeapPriorityQueue();
+            }
         }
-        
+
         private void InitSortedArrayQueue()
         {
             queue = new SortedArrayPriorityQueue<Person>(8);
@@ -60,7 +66,7 @@ namespace PriorityQueue
         }
         private void InitSortedLinkedPriorityQueue()
         {
-            queue = new SortedLinkedPriorityQueue< Person >();
+            queue = new SortedLinkedPriorityQueue<Person>();
             Lbl_Output.Text = "New sorted linked list priority queue created";
         }
         private void InitUnsortedLinkedPriorityQueue()
@@ -69,9 +75,15 @@ namespace PriorityQueue
             Lbl_Output.Text = "New Unsorted linked list priority queue created";
         }
 
+        private void InitHeapPriorityQueue()
+        {
+            queue = new HeapPriorityQueue<Person>(8);
+            Lbl_Output.Text = "New heap priority queue created";
+        }
+
         private void Btn_AddQueue_Click(object sender, System.EventArgs e)
         {
-            if(string.IsNullOrWhiteSpace(Txt_Person.Text) == false)
+            if (string.IsNullOrWhiteSpace(Txt_Person.Text) == false)
             {
                 Person person = new Person(Txt_Person.Text);
                 int priority = (int)Num_Priority.Value;
@@ -79,8 +91,8 @@ namespace PriorityQueue
                 {
                     queue.Add(person, priority);
                     Lbl_Output.Text = "Added " + person.ToString();
-                } 
-                catch(QueueOverflowException exception)
+                }
+                catch (QueueOverflowException exception)
                 {
                     Lbl_Output.Text = exception.Message;
                 }
