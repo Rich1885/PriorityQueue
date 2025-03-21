@@ -7,7 +7,7 @@ using System.Web;
 
 namespace PriorityQueue
 {
-    internal class UnsortedLinkedPriorityQueue<T> : PriorityQueue<T>   
+    public class UnsortedLinkedPriorityQueue<T> : PriorityQueue<T>   
     {
         // Node class to represent each item in the priority queue
         private class Node

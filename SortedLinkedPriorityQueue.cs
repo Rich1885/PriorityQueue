@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace PriorityQueue
 
 {
-    internal class SortedLinkedPriorityQueue<T> : PriorityQueue<T>
+    public class SortedLinkedPriorityQueue<T> : PriorityQueue<T>
     {
         // Node class to represent each item in the priority queue
         private class Node

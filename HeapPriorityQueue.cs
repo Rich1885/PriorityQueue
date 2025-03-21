@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PriorityQueue
 {
-    internal class HeapPriorityQueue<T> : PriorityQueue<T>
+    public class HeapPriorityQueue<T> : PriorityQueue<T>
     {
         private readonly PriorityItem<T>[] storage;
         private readonly int capacity;
